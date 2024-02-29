@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Website</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    .slider {
+      max-width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 0 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Add your additional styles for attractive designs here */
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- Replace 'Your Logo' with your actual logo image -->
+  <img src="C:\Users\Administrator\Desktop\vibz\logo.png" alt="Your Logo" style="max-width: 200px;">
+  <h1>Kalptaru Enterprises</h1>
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#inquiry">Inquiry</a>
+  </nav>
+</header>
+
+<div class="slider">
+  <div class="slide">
+    <img src="C:\Users\Administrator\Desktop\vibz\1.jpg" alt="Slide 1" style="max-width: 600px;>
+  </div>
+  <div class="slide">
+    <img src="C:\Users\Administrator\Desktop\vibz\2.jpg" alt="Slide 2" style="max-width: 600px;>
+  </div>
+  <!-- Add more slides as needed -->
+  <div class="buttons">
+    <button class="button" onclick="prevSlide()">Prev</button>
+    <button class="button" onclick="nextSlide()">Next</button>
+  </div>
+</div>
+
+<footer>
+  &copy; 2024 . All Rights Reserved.
+</footer>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide) => slide.style.display = 'none');
+    slides[index].style.display = 'block';
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  // Show the first slide initially
+  showSlide(0);
+</script>
+
+</body>
+</html>
